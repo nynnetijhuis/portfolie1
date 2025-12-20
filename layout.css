@@ -1,0 +1,77 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*************** video *********************/
+.img-container {
+  display: grid;
+  place-items: center; /* i midten både horisontalt og vertikalt */
+  position: relative; /* overlay positioning */
+  width: 100vw; /* Fulde viewport width */
+  height: 100vh; /* Fulde viewport height */
+  overflow: hidden; /* Kun den del, der passer i containeren, resten bliver skåret væk - w3 schools */
+}
+
+.img-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cover hele containeren med aspect ratio */
+  transform: translate(-50%, -50%); /* Center video */
+}
+
+.img-container h1 {
+  color: white;
+  font-size: 5rem;
+  font-family: "Italianno", cursive;
+  text-align: center;
+  margin-top: 10%; /* flytter teksten ned */
+  z-index: 1;
+}
+
+/*************** forside *********************/
+.intro {
+  margin-top: 4rem;
+  place-self: center;
+  text-align: center; /* sætter teksten i midten på min class */
+  padding: 0 20px; /* luft i siden på mobil */
+}
+
+.senærmere {
+  place-self: center;
+  text-align: center; /* sætter teksten i midten på min class */
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+.grid_1-1 {
+  display: grid;
+  gap: 30px;
+  justify-content: center; /* centrerer gridet på alle skærme */
+  margin-bottom: 6rem;
+}
+
+.grid_1-1 img {
+  width: 100%;
+  max-width: 350px; /* billedets størrelse */
+  display: block;
+  margin: 0 auto; /* centrere */
+}
+
+/* dekstop, 2 kolloner når desktop*/
+@media (min-width: 840px) {
+  .grid_1-1 {
+    grid-template-columns: repeat(2, max-content); /* kolonnerne tager kun så meget plads som billedet */
+    gap: 60px;
+    justify-content: center; /* centrer gridet */
+  }
+}

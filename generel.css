@@ -1,0 +1,222 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+:root {
+  --color-baggrundsfarve: #faf5f5;
+  --color-tekstfarve: black;
+  --hoverfarve: #ecc697;
+  --color-footerfarve: #f4e0c3;
+}
+
+/******************** Tekst *****************/
+
+h2 {
+  font-size: 2.5rem;
+  font-family: "Italiana", sans-serif;
+  font-weight: 200;
+}
+
+p {
+  font-size: 1.2rem;
+  max-width: 75ch;
+  margin: 0 auto; /* centrerer teksten, hvis max-width er mindre end container */
+}
+
+/******************** menu *****************/
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 20px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.logo {
+  max-width: 120px;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: var(--color-tekstfarve);
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+}
+
+.menu a:hover {
+  color: var(--hoverfarve);
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-tekstfarve);
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 897px) {
+  .menu {
+    display: none;
+  }
+
+  .logo {
+    max-width: 70px;
+  }
+
+  .burger {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    z-index: 10; /* sørger for at burgeren ligger over andet indhold */
+    right: 20px;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    text-align: right;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+  }
+
+  nav.active .menu .round-btn {
+    margin-left: auto;
+  }
+}
+
+body {
+  background-color: var(--color-baggrundsfarve);
+}
+
+/*************** Footer *********************/
+.grid_1-1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+footer {
+  background-color: var(--color-footerfarve);
+  font-size: 1rem;
+  /* for at få footeren til altid at være i bunden af siden*/
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+#booking {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.medier {
+  width: 48px;
+  height: 48px;
+}
+
+.socialemedier {
+  align-self: center;
+  justify-self: end;
+  margin-right: 3rem;
+  grid-column: 3/4;
+}
+.socialemedier a {
+  margin-right: 1rem;
+}
+.medier:hover {
+  transform: scale(1.2);
+}
+footer a {
+  text-decoration: none;
+  color: var(--color-tekstfarve);
+}
+
+footer a:hover {
+  color: var(--color-teksthover);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  justify-content: center;
+  margin-left: 3rem;
+}
+
+.logo {
+  width: 150px;
+  place-self: center;
+}
