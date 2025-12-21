@@ -20,15 +20,28 @@ img {
 /******************** Tekst *****************/
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   font-family: "Italiana", sans-serif;
   font-weight: 200;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   max-width: 75ch;
   margin: 0 auto; /* centrerer teksten, hvis max-width er mindre end container */
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 700px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    max-width: 65ch;
+  }
 }
 
 /******************** menu *****************/
@@ -131,7 +144,7 @@ header {
   nav.active .menu {
     display: flex;
     flex-direction: column;
-    background-color: #1e1e1e;
+    background-color: var(--color-footerfarve);
     position: absolute;
     top: 150px;
     left: 0;
