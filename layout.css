@@ -53,25 +53,105 @@ img {
   margin-top: 4rem;
   margin-bottom: 2rem;
 }
-.grid_1-1 {
-  display: grid;
-  gap: 30px;
-  justify-content: center; /* centrerer gridet på alle skærme */
-  margin-bottom: 6rem;
+.grid_1 {
+  display: flex;
+  flex-direction: column; /* billeder under hinanden */
+  align-items: center; /* centrerer billederne */
+  gap: 20px; /* lidt luft mellem billeder */
 }
 
-.grid_1-1 img {
-  width: 100%;
-  max-width: 350px; /* billedets størrelse */
-  display: block;
-  margin: 0 auto; /* centrere */
+.grid_1 img {
+  width: 80%; /* mindre end fuld bredde på mobil */
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 /* dekstop, 2 kolloner når desktop*/
 @media (min-width: 840px) {
+  .grid_1 {
+    display: flex;
+    flex-direction: row; /* billeder side om side */
+    justify-content: center; /* centrer hele rækken */
+    gap: 30px; /* afstand mellem billeder */
+  }
+
+  .grid_1 img {
+    width: 300px; /* fast bredde for begge billeder */
+    height: auto;
+    margin-bottom: 4rem;
+  }
+}
+
+/*************** om mig siden *********************/
+.boks1 {
+  background-color: white;
+  border: 1px solid #f4e0c3;
+  width: 90%;
+  max-width: 800px; /* ændre størrelsen på boksen */
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.nynne {
+  place-self: center;
+  text-align: center; /* sætter teksten i midten på min class */
+  margin-bottom: 1rem;
+}
+
+.boks1 img {
+  width: 60%;
+  display: block;
+  margin: 20px auto 0;
+  border-radius: 30px; /* runde kanter */
+}
+
+.mmd {
+  place-self: center;
+  text-align: start; /* sætter teksten i midten på min class */
+  padding: 30px;
+}
+.pmmd {
+  margin-left: 1rem;
+}
+
+ul {
+  list-style-type: disc; /* tvinger prikkerne frem - w3 schools */
+  padding-left: 40px; /* luft til venstre */
+  margin-bottom: 1rem;
+}
+
+.erfaring {
+  place-self: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+@media (min-width: 800px) {
+  .boks1 {
+    max-width: 1100px;
+    padding: 30px;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+
   .grid_1-1 {
-    grid-template-columns: repeat(2, max-content); /* kolonnerne tager kun så meget plads som billedet */
-    gap: 60px;
-    justify-content: center; /* centrer gridet */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 1 kolonne tekst, 1 kolonne billede */
+    gap: 30px;
+    align-items: center; /* centrerer vertikalt */
+  }
+
+  .boks1 img {
+    width: 90%; /* fylder hele kolonnen */
+    margin: 0;
+  }
+
+  .nynne {
+    text-align: left; /* venstrestillet på desktop i grid */
+  }
+  .billede {
+    margin-left: 5rem;
   }
 }
