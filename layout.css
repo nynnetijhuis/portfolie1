@@ -10,7 +10,7 @@ img {
   display: block;
 }
 
-/*************** video *********************/
+/*************** video på forsiden *********************/
 .img-container {
   display: grid;
   place-items: center; /* i midten både horisontalt og vertikalt */
@@ -43,7 +43,7 @@ img {
 .intro {
   margin-top: 4rem;
   place-self: center;
-  text-align: center; /* sætter teksten i midten på min class */
+  text-align: left; /* sætter teksten i midten på min class */
   padding: 0 20px; /* luft i siden på mobil */
 }
 
@@ -67,25 +67,13 @@ img {
   margin-bottom: 1rem;
 }
 
-/* dekstop, 2 kolloner når desktop*/
-@media (min-width: 840px) {
-  .grid_1 {
-    display: flex;
-    flex-direction: row; /* billeder side om side */
-    justify-content: center; /* centrer hele rækken */
-    gap: 30px; /* afstand mellem billeder */
-  }
-
-  .grid_1 img {
-    width: 300px; /* fast bredde for begge billeder */
-    height: auto;
-    margin-bottom: 4rem;
-  }
+.liste1 {
+  place-self: center;
 }
 
 /*************** om mig siden *********************/
 .boks1 {
-  background-color: white;
+  background-color: var(--color-boksfarve);
   border: 1px solid #f4e0c3;
   width: 90%;
   max-width: 800px; /* ændre størrelsen på boksen */
@@ -108,13 +96,25 @@ img {
   border-radius: 30px; /* runde kanter */
 }
 
+/*************** om mig siden - MMD *********************/
 .mmd {
   place-self: center;
   text-align: start; /* sætter teksten i midten på min class */
+  margin-top: 4rem;
   padding: 30px;
 }
-.pmmd {
-  margin-left: 1rem;
+
+.imageek img {
+  width: 50%; /* størrelsen på billedet */
+  max-width: 300px; /* begrænser størrelsen */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centrerer billedet */
+  object-position: center;
+  border-radius: 30px; /* runde kanter */
+}
+.text4 {
+  padding: 30px;
 }
 
 ul {
@@ -123,11 +123,107 @@ ul {
   margin-bottom: 1rem;
 }
 
-.erfaring {
-  place-self: center;
-  text-align: center;
-  margin-bottom: 1rem;
+/***** popup på om mig side - animation ******/
+
+[popover] {
+  padding: 1rem;
+  max-height: 90vh;
+  max-width: 50ch;
+  width: 90vw;
+  margin-inline: auto;
 }
+
+[popover] {
+  opacity: 0;
+  rotate: 360deg;
+  transition: 0.5s allow-discrete;
+}
+
+:popover-open {
+  opacity: 1;
+  rotate: none;
+  @starting-style {
+    opacity: 0;
+    rotate: -360deg;
+  }
+}
+
+#news_popper {
+  background-color: var(--color-footerfarve);
+}
+
+.boks2 {
+  background-color: var(--color-boksfarve);
+  border: 1px solid #f4dcc3;
+  width: 110%;
+  max-width: 400px; /* ændre størrelsen på boksen */
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.cta_btn {
+  background-color: rgb(188, 143, 111);
+  color: rgb(255, 255, 255);
+  border: none;
+  text-decoration: none;
+
+  font-size: 1rem;
+  border-radius: 10px;
+  display: inline-block;
+  width: 8rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+.cta_btn:hover {
+  color: black;
+}
+
+/* Stjerner i popoveren */
+.stjerneliste {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.stjerne-tekst {
+  font-weight: bold;
+  width: 100px; /* juster efter behov, så teksten står pænt */
+}
+
+.stjerner .stjerne {
+  color: lightgray; /* tomme stjerner */
+}
+
+.stjerner .stjerne.filled {
+  color: #ff0000; /* fyldte stjerner */
+}
+
+/* Dekstop */
+
+/* Forside - 2 billeder tæt sammen i midten, og grid til liste og erfaring*/
+@media (min-width: 840px) {
+  .grid_1 {
+    display: flex;
+    flex-direction: row; /* billeder side om side */
+    justify-content: center; /* centrer hele rækken */
+    gap: 30px; /* afstand mellem billeder */
+  }
+
+  .grid_1 img {
+    width: 300px; /* fast bredde for begge billeder */
+    height: auto;
+    margin-bottom: 4rem;
+  }
+
+  .boks3 {
+    margin-top: 5rem;
+  }
+}
+/* Boksen i starten af "om mig" siden*/
 @media (min-width: 800px) {
   .boks1 {
     max-width: 1100px;
@@ -153,5 +249,47 @@ ul {
   }
   .billede {
     margin-left: 5rem;
+  }
+}
+
+/* Ek - multimediedesigner*/
+@media (min-width: 800px) {
+  .grid_1-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    min-height: 80vh;
+  }
+
+  .mmd {
+    grid-column: 1 / 4; /* h2 spænder over begge kolonner */
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .imageek {
+    grid-row: 2 / 4;
+    grid-column: 1;
+  }
+
+  .imageek img {
+    width: 55%; /* størrelsen på billedet i desktop */
+    max-width: 500px; /* kontrollerer størrelse på desktop */
+    margin-left: auto; /* flytter billedet mod højre */
+    margin-right: 0;
+    object-position: right center;
+  }
+
+  .text4 {
+    grid-column: 2;
+    grid-row: 3;
+    padding: 3rem;
+    align-self: start; /* starter lidt højere op */
+    margin-top: -5.5rem; /* jo mere -, jo højere kommer teksten op */
+    max-width: 65ch;
+  }
+  .erfaring {
+    margin-left: 4rem;
+    margin-bottom: 0.5rem;
   }
 }
