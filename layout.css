@@ -203,7 +203,6 @@ ul {
 }
 
 /* Dekstop */
-
 /* Forside - 2 billeder tæt sammen i midten, og grid til liste og erfaring*/
 @media (min-width: 840px) {
   .grid_1 {
