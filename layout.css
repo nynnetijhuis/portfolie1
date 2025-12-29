@@ -83,7 +83,7 @@ img {
   margin-bottom: 3rem;
 }
 
-.nynne {
+.overskrift {
   place-self: center;
   text-align: center; /* sætter teksten i midten på min class */
   margin-bottom: 1rem;
@@ -113,6 +113,7 @@ img {
   object-position: center;
   border-radius: 30px; /* runde kanter */
 }
+
 .text4 {
   padding: 30px;
 }
@@ -202,6 +203,77 @@ ul {
   color: #ff0000; /* fyldte stjerner */
 }
 
+/*************** Temaerne i bokse - projekter siden *********************/
+
+.mineprojekter {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.MK {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 50px;
+}
+
+.temaerne {
+  margin: 1rem;
+}
+
+.temaerne-img {
+  margin-bottom: 1rem;
+}
+
+.tema {
+  border-radius: 10px;
+  border: 1px solid white;
+  max-width: 280px; /* Størrelsen på boksen */
+  margin: 0 auto; /* centrerer på mobilen */
+}
+
+.img.hover {
+  display: none;
+}
+
+/* Tekst ovenpå billede */
+.tema {
+  position: relative; /* container til absolut positioning */
+  overflow: hidden; /* skjul alt udenfor */
+}
+
+.tema .temaerne {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column; /* stablet lodret */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-family: "Impact", sans-serif;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.tema h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.tema p {
+  margin: 0;
+  font-size: 1rem;
+}
+/* Mobilsite side */
+.tema2img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  display: block;
+  place-self: center;
+}
+
 /* Dekstop */
 /* Forside - 2 billeder tæt sammen i midten, og grid til liste og erfaring*/
 @media (min-width: 840px) {
@@ -209,6 +281,7 @@ ul {
     display: flex;
     flex-direction: row; /* billeder side om side */
     justify-content: center; /* centrer hele rækken */
+
     gap: 30px; /* afstand mellem billeder */
   }
 
@@ -243,7 +316,7 @@ ul {
     margin: 0;
   }
 
-  .nynne {
+  .overskrift {
     text-align: left; /* venstrestillet på desktop i grid */
   }
   .billede {
@@ -290,5 +363,44 @@ ul {
   .erfaring {
     margin-left: 4rem;
     margin-bottom: 0.5rem;
+  }
+}
+
+/* Mine projekter - boksene*/
+
+@media (min-width: 700px) {
+  .MK {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .billede2 {
+    overflow: hidden;
+    max-width: none;
+  }
+
+  .img {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .img.hover {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .tema:hover .img.hover {
+    opacity: 1;
+  }
+
+  .tema:hover .img.normal {
+    opacity: 0;
+  }
+
+  .tema:hover .img {
+    transform: scale(1.05);
   }
 }
