@@ -220,24 +220,15 @@ ul {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
-.MK {
+.projekt {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 50px;
 }
 
-.temaerne {
-  margin: 1rem;
-}
-
-.temaerne-img {
-  margin-bottom: 1rem;
-}
-
 .tema {
-  border-radius: 10px;
-  border: 1px solid white;
+  border-radius: 10px; /* runde kanter */
   max-width: 280px; /* Størrelsen på boksen */
   margin: 0 auto; /* centrerer på mobilen */
 }
@@ -254,11 +245,10 @@ ul {
 
 .tema .temaerne {
   position: absolute;
-  inset: 0;
+  inset: 0; /* placere teksten ovenpå boksen, ellers bagved */
   display: flex;
-  flex-direction: column; /* stablet lodret */
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* stablet lodret ift teksten */
+  justify-content: center; /* placere i midten lodret */
   text-align: center;
   width: 100%;
   color: white;
@@ -394,7 +384,7 @@ ul {
 /* Mine projekter - boksene*/
 
 @media (min-width: 700px) {
-  .MK {
+  .projekt {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
