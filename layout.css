@@ -37,6 +37,7 @@ img {
   text-align: center;
   margin-top: 10%; /* flytter teksten ned */
   z-index: 1;
+  font-weight: 10;
 }
 
 /*************** forside *********************/
@@ -64,11 +65,16 @@ img {
   width: 80%; /* mindre end fuld bredde på mobil */
   max-width: 300px;
   height: auto;
-  margin-bottom: 1rem;
 }
 
-.liste1 {
-  place-self: center;
+.klik {
+  text-decoration: underline;
+  color: black; /* eller din ønskede farve */
+  font-size: 1.5rem;
+}
+.item {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 /*************** om mig siden *********************/
@@ -122,6 +128,10 @@ ul {
   list-style-type: disc; /* tvinger prikkerne frem - w3 schools */
   padding-left: 40px; /* luft til venstre */
   margin-bottom: 1rem;
+}
+
+.liste1 {
+  place-self: center;
 }
 
 /***** popup på om mig side - animation ******/
@@ -265,13 +275,28 @@ ul {
   margin: 0;
   font-size: 1rem;
 }
-/* Mobilsite side */
+
+/************* Mobil site side (tema 2) ******************/
 .tema2img {
   max-width: 250px;
   width: 100%;
   height: auto;
   display: block;
   place-self: center;
+}
+
+.ntimg {
+  max-width: 200px;
+  place-self: center;
+}
+
+.mobilsiteh2 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.link {
+  margin-top: 2rem;
 }
 
 /* Dekstop */
@@ -288,7 +313,7 @@ ul {
   .grid_1 img {
     width: 300px; /* fast bredde for begge billeder */
     height: auto;
-    margin-bottom: 4rem;
+    margin-bottom: 1.2rem;
   }
 
   .boks3 {
