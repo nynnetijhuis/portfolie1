@@ -10,6 +10,24 @@ img {
   display: block;
 }
 
+/************* Baggrundfarver på tema siderne  ******************/
+
+.tema2baggrund {
+  background-color: #f4e0c3;
+}
+
+.tema3baggrundsfarve {
+  background-color: #ecc697;
+}
+
+.tema4baggrundsfarve {
+  background-color: #f2ae85;
+}
+
+.tema5baggrundsfarve {
+  background-color: #d5aa98;
+}
+
 /*************** video på forsiden *********************/
 .img-container {
   display: grid;
@@ -62,19 +80,24 @@ img {
 }
 
 .grid_1 img {
-  width: 80%; /* mindre end fuld bredde på mobil */
   max-width: 300px;
   height: auto;
 }
 
 .klik {
   text-decoration: underline;
-  color: black; /* eller din ønskede farve */
+  color: black;
   font-size: 1.5rem;
+  font-family: "News Cycle", sans-serif;
 }
 .item {
   text-align: center;
   margin-bottom: 3rem;
+}
+
+.startp {
+  padding: 15px;
+  margin-bottom: 2rem;
 }
 
 /*************** om mig siden *********************/
@@ -132,6 +155,7 @@ ul {
 
 .liste1 {
   place-self: center;
+  font-family: "News Cycle", sans-serif;
 }
 
 /***** popup på om mig side - animation ******/
@@ -176,17 +200,17 @@ ul {
 
 .cta_btn {
   background-color: rgb(188, 143, 111);
-  color: rgb(255, 255, 255);
+  color: white;
   border: none;
   text-decoration: none;
-
   font-size: 1rem;
   border-radius: 10px;
-  display: inline-block;
+  display: block; /* gør at tingene står under hinanden*/
   width: 8rem;
-  text-align: center;
-  margin-top: 1rem;
+  margin: 1rem auto; /* sætter min knap i midten af boksen */
+  font-family: "News Cycle", sans-serif;
 }
+
 .cta_btn:hover {
   color: black;
 }
@@ -253,7 +277,7 @@ ul {
   width: 100%;
   color: white;
   font-family: "Impact", sans-serif;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .tema h3 {
@@ -308,6 +332,10 @@ ul {
 
   .boks3 {
     margin-top: 5rem;
+  }
+
+  .menu {
+    gap: 40px;
   }
 }
 /* Boksen i starten af "om mig" siden*/
@@ -417,5 +445,8 @@ ul {
 
   .tema:hover .img {
     transform: scale(1.05);
+  }
+  .tema h3 {
+    font-size: 1.7rem;
   }
 }
