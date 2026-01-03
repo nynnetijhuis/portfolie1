@@ -28,11 +28,19 @@ h2 {
 
 h3 {
   font-size: 1.4rem;
+  font-family: "Italiana", sans-serif;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-family: "Italiana", sans-serif;
 }
 p {
   font-size: 1rem;
   max-width: 75ch;
   margin: 0 auto; /* centrerer teksten, hvis max-width er mindre end container */
+  font-family: "News Cycle", sans-serif;
+
   line-height: 1.5rem;
 }
 
@@ -68,7 +76,7 @@ header {
   padding: 0;
   margin-right: 3rem;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-family: "News Cycle", sans-serif;
 }
 
 .logo {
