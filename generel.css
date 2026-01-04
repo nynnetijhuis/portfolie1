@@ -57,6 +57,7 @@ p {
 }
 
 /******************** menu *****************/
+
 header {
   position: sticky;
   top: 0;
@@ -197,12 +198,6 @@ footer {
   width: 100%;
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-#booking {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
 }
 
 .medier {
