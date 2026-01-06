@@ -211,7 +211,7 @@ ul {
 }
 
 .boks2 {
-  background-color: var(--color-boksfarve);
+  background-color: white;
   border: 1px solid #f4dcc3;
   width: 110%;
   max-width: 400px; /* ændre størrelsen på boksen */
@@ -342,6 +342,7 @@ ul {
 
 .link {
   margin-top: 2rem;
+  font-family: "News Cycle", sans-serif;
 }
 
 /* Dekstop */
