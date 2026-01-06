@@ -213,7 +213,7 @@ ul {
 .boks2 {
   background-color: white;
   border: 1px solid #f4dcc3;
-  width: 110%;
+  width: 100%;
   max-width: 400px; /* ændre størrelsen på boksen */
   margin: 0 auto;
   padding: 30px;
