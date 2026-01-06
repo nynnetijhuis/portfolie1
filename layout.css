@@ -33,8 +33,8 @@ img {
   display: grid;
   place-items: center; /* i midten både horisontalt og vertikalt */
   position: relative; /* overlay positioning */
-  width: 100vw; /* Fulde viewport width */
-  height: 100vh; /* Fulde viewport height */
+  width: 100vw; /* Gør at elementet bliver ligeså bredt som browservinduet */
+  height: 100vh; /* Fulde browservindue */
   overflow: hidden; /* Kun den del, der passer i containeren, resten bliver skåret væk - w3 schools */
 }
 
@@ -44,7 +44,7 @@ img {
   left: 50%;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* cover hele containeren med aspect ratio */
+  object-fit: cover; /* fylder hele skærmen*/
   transform: translate(-50%, -50%); /* Center video */
 }
 
@@ -54,7 +54,7 @@ img {
   font-family: "Italianno", cursive;
   text-align: center;
   margin-top: 10%; /* flytter teksten ned */
-  z-index: 1;
+  z-index: 1; /* gør at det ligger forrest */
   font-weight: 10;
 }
 
@@ -76,7 +76,7 @@ img {
   display: flex;
   flex-direction: column; /* billeder under hinanden */
   align-items: center; /* centrerer billederne */
-  gap: 20px; /* lidt luft mellem billeder */
+  gap: 20px; /* Luft mellem mine billeder */
 }
 
 .grid_1 img {
@@ -92,7 +92,7 @@ img {
   height: 270px; /* højden */
   display: flex;
   flex-direction: column; /* Gør at p placere sig under, i rækker */
-  margin-bottom: 7rem;
+  margin-bottom: 6rem;
   border-radius: 10px;
 }
 
@@ -100,17 +100,17 @@ img {
   max-width: 100%; /* fylder container bredde, men ikke mere */
   max-height: 80%; /* fylder max 70% af container højde */
   object-fit: contain; /* Gør at billeder passer i boksen, hjælp fra w3 school */
-  margin-top: 3.3rem;
+  margin-top: 3.5rem;
 }
 
 .bil2 {
-  margin-top: 1rem;
+  margin-top: 1.7rem;
 }
 
 .klik {
   text-decoration: underline;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: "News Cycle", sans-serif;
 }
 
@@ -125,8 +125,8 @@ img {
 
 /*************** om mig siden *********************/
 .boks1 {
-  background-color: var(--color-boksfarve);
-  border: 1px solid #f4e0c3;
+  background-color: white;
+  border: 1px solid var(--color-boksfarve);
   width: 90%;
   max-width: 800px; /* ændre størrelsen på boksen */
   margin: 0 auto;
@@ -151,7 +151,7 @@ img {
 /*************** om mig siden - MMD *********************/
 .mmd {
   place-self: center;
-  text-align: start; /* sætter teksten i midten på min class */
+  text-align: start; /* sætter teksten i midten i min class */
   margin-top: 4rem;
   padding: 30px;
 }
@@ -171,7 +171,7 @@ img {
 }
 
 ul {
-  list-style-type: disc; /* tvinger prikkerne frem - w3 schools */
+  list-style-type: disc; /* mine prikker kom ik frem, dette gør de kommer frem - w3 schools */
   padding-left: 40px; /* luft til venstre */
   margin-bottom: 1rem;
 }
@@ -188,13 +188,13 @@ ul {
   max-height: 90vh;
   max-width: 50ch;
   width: 90vw;
-  margin-inline: auto;
+  margin-inline: auto; /* bliver centreret horisonalt */
 }
 
 [popover] {
-  opacity: 0;
+  opacity: 0; /* 0 gør at den starter usynligt */
   rotate: 360deg;
-  transition: 0.5s allow-discrete;
+  transition: 0.5s allow-discrete; /* animationen varer 0.5 sekunder */
 }
 
 :popover-open {
@@ -236,6 +236,14 @@ ul {
 
 .cta_btn:hover {
   color: black;
+}
+
+.popoverp {
+  margin-bottom: 2rem;
+}
+
+.popoverh3 {
+  margin-bottom: 0.5rem;
 }
 
 /* Stjerner i popoveren */
@@ -360,9 +368,19 @@ ul {
   .menu {
     gap: 40px;
   }
-}
-/* Boksen i starten af "om mig" siden*/
-@media (min-width: 800px) {
+
+  .klik {
+    font-size: 1.6rem;
+  }
+
+  .bil1 {
+    margin-top: 3.3rem;
+  }
+
+  .bil2 {
+    margin-top: 1rem;
+  }
+  /* Boksen i starten af "om mig" siden*/
   .boks1 {
     max-width: 1100px;
     padding: 30px;
@@ -388,10 +406,8 @@ ul {
   .billede {
     margin-left: 5rem;
   }
-}
 
-/* Ek - multimediedesigner*/
-@media (min-width: 800px) {
+  /* Ek - multimediedesigner*/
   .grid_1-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -430,11 +446,8 @@ ul {
     margin-left: 4rem;
     margin-bottom: 0.5rem;
   }
-}
 
-/* Mine projekter - boksene*/
-
-@media (min-width: 700px) {
+  /* Mine projekter - boksene*/
   .projekt {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -442,7 +455,7 @@ ul {
   }
 
   .billede2 {
-    overflow: hidden;
+    overflow: hidden; /* Alt, der strækker sig uden for elementets bredde eller højde, bliver skjult */
     max-width: none;
   }
 

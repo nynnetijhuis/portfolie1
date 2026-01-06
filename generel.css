@@ -16,6 +16,8 @@ img {
   --hoverfarve: #ecc697;
   --color-footerfarve: #f4e0c3;
   --color-boksfarve: white;
+  --color-boksfarve: #f4e0c3;
+  --color-knapfarve: #bc8f6f;
 }
 
 /******************** Tekst *****************/
@@ -123,7 +125,26 @@ header {
   display: none;
 }
 
-@media screen and (max-width: 897px) {
+/* CSS animation til h2 - Denne keyframes har jeg lært i undervisningen d. 3/11/2025.*/
+h2.overskrift {
+  position: relative; /* gør det muligt at flytte elementet */
+  left: -100%; /* starter fra venstre side */
+  text-align: center; /* centrere min h2*/
+  animation: moveRight 1.5s ease-out forwards; /* Ease out - starter hurtigt, slutter langsomt, forwards (bliver på midten til sidst - w3 school*/
+  display: inline-block;
+}
+
+@keyframes moveRight {
+  from {
+    left: -100%; /* udenfor venstre, Denne keyframes har jeg lært i undervisningen d. 3/11/2025.*/
+  }
+  to {
+    left: 0; /* ender på midterposition */
+  }
+}
+
+/* desktop*/
+@media screen and (max-width: 800px) {
   .menu {
     display: none;
   }
@@ -159,7 +180,7 @@ header {
     flex-direction: column;
     background-color: var(--color-footerfarve);
     position: absolute;
-    top: 150px;
+    top: 100px;
     left: 0;
     width: 100%;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -234,6 +255,11 @@ footer a:hover {
   font-weight: bold;
   justify-content: center;
   margin-left: 3rem;
+  font-family: "News Cycle", sans-serif;
+}
+
+.links:hover {
+  color: white;
 }
 
 .logo {
